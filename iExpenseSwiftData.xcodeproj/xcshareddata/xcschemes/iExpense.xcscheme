@@ -17,7 +17,7 @@
                BlueprintIdentifier = "B78B71A72A8D36730084DE57"
                BuildableName = "iExpense.app"
                BlueprintName = "iExpense"
-               ReferencedContainer = "container:iExpense.xcodeproj">
+               ReferencedContainer = "container:iExpenseSwiftData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,7 +46,7 @@
             BlueprintIdentifier = "B78B71A72A8D36730084DE57"
             BuildableName = "iExpense.app"
             BlueprintName = "iExpense"
-            ReferencedContainer = "container:iExpense.xcodeproj">
+            ReferencedContainer = "container:iExpenseSwiftData.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "B78B71A72A8D36730084DE57"
             BuildableName = "iExpense.app"
             BlueprintName = "iExpense"
-            ReferencedContainer = "container:iExpense.xcodeproj">
+            ReferencedContainer = "container:iExpenseSwiftData.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
