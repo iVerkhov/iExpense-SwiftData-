@@ -5,26 +5,26 @@
 //  Created by Игорь Верхов on 20.08.2023.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AddView: View {
-    
+    @Environment(\.modelContext) var modelContext
     @State private var name = "New expense"
     @State private var type = ""
     @State private var amount = 0.0
     
-    let types = ["Personal", "Buiseness"]
-    
-    var expenses: Expenses
+    static let types = ["Personal", "Buiseness"]
     
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
+        NavigationStack {
             Form {
-//                TextField("Name", text: $name)
+                //                TextField("Name", text: $name)
                 
                 Picker("Type", selection: $type) {
-                    ForEach(types, id: \.self) {
+                    ForEach(Self.types, id: \.self) {
                         Text($0)
                     }
                 }
@@ -35,7 +35,7 @@ struct AddView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         let item = ExpenseItem(name: name, type: type, amount: amount)
-                        expenses.items.append(item)
+                        modelContext.insert(item)
                         dismiss()
                     }
                 }
@@ -48,9 +48,11 @@ struct AddView: View {
             .navigationTitle($name)
             .navigationBarBackButtonHidden()
             .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    AddView()
+        .modelContainer(for: ExpenseItem.self)
 }

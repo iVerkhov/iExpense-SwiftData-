@@ -4,74 +4,79 @@
 //
 //  Created by Игорь Верхов on 16.08.2023.
 //
-
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
+    @Query var expenses: [ExpenseItem]
     
-    @State private var expenses = Expenses()
+    @State private var sortOrder = [
+        SortDescriptor(\ExpenseItem.amount)
+    ]
     
-//    @State private var showingSheet = false
+    @State private var type = "All"
     
-    let localCurrency = Locale.current.currency?.identifier ?? "USD"
+    @State private var showingSheet = false
     
     var body: some View {
         NavigationStack {
-            List {
-                Section("Personal") {
-                    ForEach(expenses.items.filter { $0.type == "Personal" }) { item in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                    .font(.headline)
-                                Text(item.type)
-                            }
-                            Spacer()
-                            Text(item.amount, format: .localCurrency)
-                                .style(for: item)
-                        }
-                        .accessibilityElement()
-                        .accessibilityLabel("\(item.name) \(item.amount.formatted(.currency(code: "USD")))")
-                        .accessibilityHint(item.type)
+            ExpenseList(type: type, sortOrder: sortOrder)
+                .navigationTitle("iExpense")
+                .sheet(isPresented: $showingSheet) {
+                    AddView()
+                }
+                .toolbar {
+//                Button("Add expense", systemImage: "plus") {
+//                    showingSheet.toggle()
+//                }
+                    NavigationLink() {
+                        AddView()
+                    } label: {
+                        Label("Add expense", systemImage: "plus")
                     }
-                    .onDelete(perform: removeItems)
-                }
-                
-                Section("Buiseness") {
-                    ForEach(expenses.items.filter { $0.type == "Buiseness" }) { item in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                    .font(.headline)
-                                Text(item.type)
-                            }
-                            Spacer()
-                            Text(item.amount, format: .localCurrency)
-                                .style(for: item)
+                    
+                    Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("Sort by name A-Z")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.name),
+                                    SortDescriptor(\ExpenseItem.amount)
+                                ])
+                            Text("Sort by name Z-A")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.name, order: .reverse),
+                                    SortDescriptor(\ExpenseItem.amount)
+                                ])
+                            Text("Cheapest first")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.amount),
+                                    SortDescriptor(\ExpenseItem.name)
+                                ])
+                            Text("Most expensive first")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.amount, order: .reverse),
+                                    SortDescriptor(\ExpenseItem.name)
+                                ])
                         }
                     }
-                    .onDelete(perform: removeItems)
+                    
+                    Menu("Filter", systemImage: "line.3.horizontal.decrease.circle") {
+                        Picker("Filter", selection: $type) {
+                            Text("All")
+                                .tag("All")
+                            ForEach(AddView.types, id:\.self) {
+                                Text($0)
+                                    .tag($0)
+                            }
+                        }
+                    }
                 }
-            }
-            .navigationTitle("iExpense")
-//            .sheet(isPresented: $showingSheet) {
-//                AddView(expenses: expenses)
-//            }
-            .toolbar {
-                NavigationLink() {
-                    AddView(expenses: expenses)
-                } label: {
-                    Label("Add expense", systemImage: "plus")
-                }
-            }
         }
-    }
-    
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(for: ExpenseItem.self)
 }
