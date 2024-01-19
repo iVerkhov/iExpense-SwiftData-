@@ -1,6 +1,6 @@
 //
 //  iExpenseApp.swift
-//  iExpense
+//  iExpenseSwiftData
 //
 //  Created by Игорь Верхов on 16.08.2023.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct iExpenseApp: App {
+struct iExpenseSwiftDataApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

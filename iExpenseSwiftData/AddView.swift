@@ -1,6 +1,6 @@
 //
 //  AddView.swift
-//  iExpense
+//  iExpenseSwiftData
 //
 //  Created by Игорь Верхов on 20.08.2023.
 //

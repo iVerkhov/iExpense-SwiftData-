@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B70E31D12B59C04A00F02783 /* ExpenseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E31D02B59C04A00F02783 /* ExpenseList.swift */; };
-		B78B71AC2A8D36730084DE57 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78B71AB2A8D36730084DE57 /* iExpenseApp.swift */; };
+		B78B71AC2A8D36730084DE57 /* iExpenseSwiftDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78B71AB2A8D36730084DE57 /* iExpenseSwiftDataApp.swift */; };
 		B78B71AE2A8D36730084DE57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78B71AD2A8D36730084DE57 /* ContentView.swift */; };
 		B78B71B02A8D36750084DE57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78B71AF2A8D36750084DE57 /* Assets.xcassets */; };
 		B78B71B32A8D36750084DE57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78B71B22A8D36750084DE57 /* Preview Assets.xcassets */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		B70E31D02B59C04A00F02783 /* ExpenseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseList.swift; sourceTree = "<group>"; };
 		B78B71A82A8D36730084DE57 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B78B71AB2A8D36730084DE57 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
+		B78B71AB2A8D36730084DE57 /* iExpenseSwiftDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseSwiftDataApp.swift; sourceTree = "<group>"; };
 		B78B71AD2A8D36730084DE57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B78B71AF2A8D36750084DE57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78B71B22A8D36750084DE57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		B78B719F2A8D36720084DE57 = {
 			isa = PBXGroup;
 			children = (
-				B78B71AA2A8D36730084DE57 /* iExpense */,
+				B78B71AA2A8D36730084DE57 /* iExpenseSwiftData */,
 				B78B71A92A8D36730084DE57 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,10 +58,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B78B71AA2A8D36730084DE57 /* iExpense */ = {
+		B78B71AA2A8D36730084DE57 /* iExpenseSwiftData */ = {
 			isa = PBXGroup;
 			children = (
-				B78B71AB2A8D36730084DE57 /* iExpenseApp.swift */,
+				B78B71AB2A8D36730084DE57 /* iExpenseSwiftDataApp.swift */,
 				B78B71AD2A8D36730084DE57 /* ContentView.swift */,
 				B70E31D02B59C04A00F02783 /* ExpenseList.swift */,
 				B78B71C12A96016D0084DE57 /* View-ExpenseStyle.swift */,
@@ -71,7 +71,7 @@
 				B78B71AF2A8D36750084DE57 /* Assets.xcassets */,
 				B78B71B12A8D36750084DE57 /* Preview Content */,
 			);
-			path = iExpense;
+			path = iExpenseSwiftData;
 			sourceTree = "<group>";
 		};
 		B78B71B12A8D36750084DE57 /* Preview Content */ = {
@@ -158,7 +158,7 @@
 				B70E31D12B59C04A00F02783 /* ExpenseList.swift in Sources */,
 				B78B71C02A95FE690084DE57 /* FormatStyle-LocalCurrency.swift in Sources */,
 				B78B71BA2A8E48370084DE57 /* ExpenseItem.swift in Sources */,
-				B78B71AC2A8D36730084DE57 /* iExpenseApp.swift in Sources */,
+				B78B71AC2A8D36730084DE57 /* iExpenseSwiftDataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +290,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iExpense/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iExpenseSwiftData/Preview Content\"";
 				DEVELOPMENT_TEAM = S3NRVWZ375;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -305,7 +305,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = iVerkhov.iExpense;
+				PRODUCT_BUNDLE_IDENTIFIER = iVerkhov.iExpenseSwiftData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,7 +320,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iExpense/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iExpenseSwiftData/Preview Content\"";
 				DEVELOPMENT_TEAM = S3NRVWZ375;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -335,7 +335,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = iVerkhov.iExpense;
+				PRODUCT_BUNDLE_IDENTIFIER = iVerkhov.iExpenseSwiftData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

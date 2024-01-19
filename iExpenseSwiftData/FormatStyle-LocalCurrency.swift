@@ -1,6 +1,6 @@
 //
 //  FormatStyle-LocalCurrency.swift
-//  iExpense
+//  iExpenseSwiftData
 //
 //  Created by Игорь Верхов on 23.08.2023.
 //

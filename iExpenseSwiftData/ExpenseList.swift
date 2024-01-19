@@ -1,6 +1,6 @@
 //
 //  ExpenseList.swift
-//  iExpense
+//  iExpenseSwiftData
 //
 //  Created by Игорь Верхов on 18.01.2024.
 //

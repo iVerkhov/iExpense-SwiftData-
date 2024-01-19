@@ -1,6 +1,6 @@
 //
 //  ExpenseItem.swift
-//  iExpense
+//  iExpenseSwiftData
 //
 //  Created by Игорь Верхов on 17.08.2023.
 //

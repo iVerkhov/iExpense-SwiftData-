@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  iExpense
+//  iExpenseSwiftData
 //
 //  Created by Игорь Верхов on 16.08.2023.
 //
